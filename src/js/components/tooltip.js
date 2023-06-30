@@ -31,7 +31,7 @@ class Tooltip extends BaseComponent {
       }
 
       const container = findElement(this._map.container, '#jvm-regions-group').getBoundingClientRect()
-      const space = 5 // Space between the cursor and tooltip element
+      const space = this._map.params.tooltipDistance; // Space between the cursor and tooltip element
 
       // Tooltip
       const { height, width } = this._tooltip.getBoundingClientRect()

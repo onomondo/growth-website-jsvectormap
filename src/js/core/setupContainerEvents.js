@@ -33,6 +33,14 @@ export default function setupContainerEvents() {
 
   if (this.params.zoomOnScroll) {
     EventHandler.on(this.container, 'wheel', event => {
+
+      // Prevent scroll from zooming if shift is not pressed
+      if(this.params.zoomModifer) {
+        if(!event.shiftKey) {
+          return false;
+        }
+      }
+      
       const deltaY = (((event.deltaY || -event.wheelDelta || event.detail) >> 10) || 1) * 75
       const rect = this.container.getBoundingClientRect()
       const offsetX = event.pageX - rect.left - window.pageXOffset

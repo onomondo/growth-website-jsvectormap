@@ -8,7 +8,9 @@ export default {
   zoomMax: 12,
   zoomMin: 1,
   zoomAnimate: true,
+  zoomModifer: false,
   showTooltip: true,
+  tooltipDistance: 5,
   zoomStep: 1.5,
   bindTouchEvents: true,
 
